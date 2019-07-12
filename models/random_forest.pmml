@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_3" version="4.4">
+    <Header copyright="Copyright (c) 2018 Software AG" description="Default Description">
+        <Application name="Nyoka" version="3.2.0"/>
+        <Timestamp>2019-07-12 12:57:43.800437</Timestamp>
+    </Header>
+    <MiningBuildTask>
+		<Extension value="Pipeline(memory=None,
+    steps=[('regressor',RandomForestRegressor(bootstrap=True, criterion='mse', max_depth=None,
+                      max_features='auto', max_leaf_nodes=None,
+                      min_impurity_decrease=0.0, min_impurity_split=None,
+                      min_samples_leaf=1, min_samples_split=2,
+                      min_weight_fraction_leaf=0.0, n_estimators=10,
+                      n_jobs=None, oob_score=False, random_state=None,
+                      verbose=0, warm_start=False))])"/>
+    </MiningBuildTask>
+    <DataDictionary numberOfFields="3">
+        <DataField name="ActorId" optype="continuous" dataType="double"/>
+        <DataField name="level" optype="continuous" dataType="double"/>
+        <DataField name="approved" optype="continuous" dataType="double"/>
+    </DataDictionary>
+    <MiningModel modelName="RandomForestRegressor" functionName="regression">
+        <MiningSchema>
+            <MiningField name="ActorId" usageType="active" optype="continuous"/>
+            <MiningField name="approved" usageType="target" optype="continuous"/>
+        </MiningSchema>
+        <Output>
+            <OutputField name="predicted_approved" optype="continuous" dataType="double" feature="predictedValue"/>
+        </Output>
+        <Segmentation multipleModelMethod="average" missingThreshold="1">
+            <Segment id="0" weight="1">
+                <True/>
+                <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
+                    <MiningSchema>
+                        <MiningField name="ActorId" usageType="active"/>
+                    </MiningSchema>
+                    <Node id="0" recordCount="7554.0">
+                        <True/>
+                        <Node id="1" score="0.1019065294415387" recordCount="3751.0">
+                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        </Node>
+                        <Node id="2" score="0.9026840111971020" recordCount="3803.0">
+                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="1" weight="1">
+                <True/>
+                <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
+                    <MiningSchema>
+                        <MiningField name="ActorId" usageType="active"/>
+                    </MiningSchema>
+                    <Node id="0" recordCount="7590.0">
+                        <True/>
+                        <Node id="1" score="0.1003674014696059" recordCount="3783.0">
+                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        </Node>
+                        <Node id="2" score="0.9018629407850964" recordCount="3807.0">
+                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="2" weight="1">
+                <True/>
+                <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
+                    <MiningSchema>
+                        <MiningField name="ActorId" usageType="active"/>
+                    </MiningSchema>
+                    <Node id="0" recordCount="7536.0">
+                        <True/>
+                        <Node id="1" score="0.1004330446369087" recordCount="3769.0">
+                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        </Node>
+                        <Node id="2" score="0.9022681787858572" recordCount="3767.0">
+                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="3" weight="1">
+                <True/>
+                <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
+                    <MiningSchema>
+                        <MiningField name="ActorId" usageType="active"/>
+                    </MiningSchema>
+                    <Node id="0" recordCount="7560.0">
+                        <True/>
+                        <Node id="1" score="0.0957233544938189" recordCount="3777.0">
+                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        </Node>
+                        <Node id="2" score="0.9025606917193216" recordCount="3783.0">
+                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="4" weight="1">
+                <True/>
+                <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
+                    <MiningSchema>
+                        <MiningField name="ActorId" usageType="active"/>
+                    </MiningSchema>
+                    <Node id="0" recordCount="7604.0">
+                        <True/>
+                        <Node id="1" score="0.1042955039277954" recordCount="3783.0">
+                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        </Node>
+                        <Node id="2" score="0.8992853581519029" recordCount="3821.0">
+                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="5" weight="1">
+                <True/>
+                <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
+                    <MiningSchema>
+                        <MiningField name="ActorId" usageType="active"/>
+                    </MiningSchema>
+                    <Node id="0" recordCount="7609.0">
+                        <True/>
+                        <Node id="1" score="0.0958811613774477" recordCount="3807.0">
+                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        </Node>
+                        <Node id="2" score="0.9014154048716261" recordCount="3802.0">
+                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="6" weight="1">
+                <True/>
+                <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
+                    <MiningSchema>
+                        <MiningField name="ActorId" usageType="active"/>
+                    </MiningSchema>
+                    <Node id="0" recordCount="7594.0">
+                        <True/>
+                        <Node id="1" score="0.0946434439697667" recordCount="3816.0">
+                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        </Node>
+                        <Node id="2" score="0.9002367264119040" recordCount="3778.0">
+                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="7" weight="1">
+                <True/>
+                <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
+                    <MiningSchema>
+                        <MiningField name="ActorId" usageType="active"/>
+                    </MiningSchema>
+                    <Node id="0" recordCount="7563.0">
+                        <True/>
+                        <Node id="1" score="0.0927379784102061" recordCount="3851.0">
+                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        </Node>
+                        <Node id="2" score="0.8924566768603466" recordCount="3712.0">
+                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="8" weight="1">
+                <True/>
+                <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
+                    <MiningSchema>
+                        <MiningField name="ActorId" usageType="active"/>
+                    </MiningSchema>
+                    <Node id="0" recordCount="7623.0">
+                        <True/>
+                        <Node id="1" score="0.1069861626729666" recordCount="3765.0">
+                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        </Node>
+                        <Node id="2" score="0.9035232136977280" recordCount="3858.0">
+                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+            <Segment id="9" weight="1">
+                <True/>
+                <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
+                    <MiningSchema>
+                        <MiningField name="ActorId" usageType="active"/>
+                    </MiningSchema>
+                    <Node id="0" recordCount="7588.0">
+                        <True/>
+                        <Node id="1" score="0.0970890122833586" recordCount="3760.0">
+                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        </Node>
+                        <Node id="2" score="0.9075449892686148" recordCount="3828.0">
+                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        </Node>
+                    </Node>
+                </TreeModel>
+            </Segment>
+        </Segmentation>
+    </MiningModel>
+</PMML>
