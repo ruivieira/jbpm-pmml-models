@@ -2,7 +2,7 @@
 <PMML xmlns="http://www.dmg.org/PMML-4_3" version="4.4">
     <Header copyright="Copyright (c) 2018 Software AG" description="Default Description">
         <Application name="Nyoka" version="3.2.0"/>
-        <Timestamp>2019-08-15 13:07:04.309761</Timestamp>
+        <Timestamp>2019-09-29 18:49:40.993271</Timestamp>
     </Header>
     <MiningBuildTask>
 		<Extension value="Pipeline(memory=None,
@@ -14,14 +14,16 @@
                       n_jobs=None, oob_score=False, random_state=None,
                       verbose=0, warm_start=False))])"/>
     </MiningBuildTask>
-    <DataDictionary numberOfFields="3">
+    <DataDictionary numberOfFields="4">
         <DataField name="ActorId" optype="continuous" dataType="double"/>
-        <DataField name="level" optype="continuous" dataType="double"/>
+        <DataField name="price" optype="continuous" dataType="double"/>
+        <DataField name="item" optype="continuous" dataType="double"/>
         <DataField name="approved" optype="continuous" dataType="double"/>
     </DataDictionary>
     <MiningModel modelName="RandomForestRegressor" functionName="regression">
         <MiningSchema>
-            <MiningField name="ActorId" usageType="active" optype="continuous"/>
+            <MiningField name="price" usageType="active" optype="continuous"/>
+            <MiningField name="item" usageType="active" optype="continuous"/>
             <MiningField name="approved" usageType="target" optype="continuous"/>
         </MiningSchema>
         <Output>
@@ -32,15 +34,22 @@
                 <True/>
                 <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
                     <MiningSchema>
-                        <MiningField name="ActorId" usageType="active"/>
+                        <MiningField name="price" usageType="active"/>
+                        <MiningField name="item" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7599.0">
+                    <Node id="0" recordCount="454.0">
                         <True/>
-                        <Node id="1" score="0.0942602255512540" recordCount="3762.0">
-                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        <Node id="1" recordCount="299.0">
+                            <SimplePredicate field="item" operator="lessOrEqual" value="0.5000000000000000"/>
+                            <Node id="2" score="0.0000000000000000" recordCount="147.0">
+                                <SimplePredicate field="price" operator="lessOrEqual" value="2001.9986572265625000"/>
+                            </Node>
+                            <Node id="3" score="1.0000000000000000" recordCount="152.0">
+                                <SimplePredicate field="price" operator="greaterThan" value="2001.9986572265625000"/>
+                            </Node>
                         </Node>
-                        <Node id="2" score="0.9064202013533587" recordCount="3837.0">
-                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        <Node id="4" score="0.0000000000000000" recordCount="155.0">
+                            <SimplePredicate field="item" operator="greaterThan" value="0.5000000000000000"/>
                         </Node>
                     </Node>
                 </TreeModel>
@@ -49,15 +58,34 @@
                 <True/>
                 <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
                     <MiningSchema>
-                        <MiningField name="ActorId" usageType="active"/>
+                        <MiningField name="price" usageType="active"/>
+                        <MiningField name="item" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7549.0">
+                    <Node id="0" recordCount="452.0">
                         <True/>
-                        <Node id="1" score="0.0971306068601583" recordCount="3768.0">
-                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        <Node id="1" recordCount="153.0">
+                            <SimplePredicate field="price" operator="lessOrEqual" value="2412.8961181640625000"/>
+                            <Node id="2" score="0.0000000000000000" recordCount="149.0">
+                                <SimplePredicate field="price" operator="lessOrEqual" value="2363.8035888671875000"/>
+                            </Node>
+                            <Node id="3" recordCount="4.0">
+                                <SimplePredicate field="price" operator="greaterThan" value="2363.8035888671875000"/>
+                                <Node id="4" score="1.0000000000000000" recordCount="1.0">
+                                    <SimplePredicate field="item" operator="lessOrEqual" value="0.5000000000000000"/>
+                                </Node>
+                                <Node id="5" score="0.0000000000000000" recordCount="3.0">
+                                    <SimplePredicate field="item" operator="greaterThan" value="0.5000000000000000"/>
+                                </Node>
+                            </Node>
                         </Node>
-                        <Node id="2" score="0.9063342318059299" recordCount="3781.0">
-                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        <Node id="6" recordCount="299.0">
+                            <SimplePredicate field="price" operator="greaterThan" value="2412.8961181640625000"/>
+                            <Node id="7" score="1.0000000000000000" recordCount="144.0">
+                                <SimplePredicate field="item" operator="lessOrEqual" value="0.5000000000000000"/>
+                            </Node>
+                            <Node id="8" score="0.0000000000000000" recordCount="155.0">
+                                <SimplePredicate field="item" operator="greaterThan" value="0.5000000000000000"/>
+                            </Node>
                         </Node>
                     </Node>
                 </TreeModel>
@@ -66,15 +94,22 @@
                 <True/>
                 <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
                     <MiningSchema>
-                        <MiningField name="ActorId" usageType="active"/>
+                        <MiningField name="price" usageType="active"/>
+                        <MiningField name="item" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7551.0">
+                    <Node id="0" recordCount="465.0">
                         <True/>
-                        <Node id="1" score="0.0968490878938640" recordCount="3791.0">
-                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        <Node id="1" score="0.0000000000000000" recordCount="150.0">
+                            <SimplePredicate field="price" operator="lessOrEqual" value="1985.6398925781250000"/>
                         </Node>
-                        <Node id="2" score="0.9040201005025126" recordCount="3760.0">
-                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        <Node id="2" recordCount="315.0">
+                            <SimplePredicate field="price" operator="greaterThan" value="1985.6398925781250000"/>
+                            <Node id="3" score="1.0000000000000000" recordCount="158.0">
+                                <SimplePredicate field="item" operator="lessOrEqual" value="0.5000000000000000"/>
+                            </Node>
+                            <Node id="4" score="0.0000000000000000" recordCount="157.0">
+                                <SimplePredicate field="item" operator="greaterThan" value="0.5000000000000000"/>
+                            </Node>
                         </Node>
                     </Node>
                 </TreeModel>
@@ -83,15 +118,34 @@
                 <True/>
                 <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
                     <MiningSchema>
-                        <MiningField name="ActorId" usageType="active"/>
+                        <MiningField name="price" usageType="active"/>
+                        <MiningField name="item" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7641.0">
+                    <Node id="0" recordCount="446.0">
                         <True/>
-                        <Node id="1" score="0.0909995027349577" recordCount="3826.0">
-                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        <Node id="1" recordCount="155.0">
+                            <SimplePredicate field="price" operator="lessOrEqual" value="2408.9661865234375000"/>
+                            <Node id="2" score="0.0000000000000000" recordCount="151.0">
+                                <SimplePredicate field="price" operator="lessOrEqual" value="1989.7886962890625000"/>
+                            </Node>
+                            <Node id="3" recordCount="4.0">
+                                <SimplePredicate field="price" operator="greaterThan" value="1989.7886962890625000"/>
+                                <Node id="4" score="1.0000000000000000" recordCount="1.0">
+                                    <SimplePredicate field="item" operator="lessOrEqual" value="0.5000000000000000"/>
+                                </Node>
+                                <Node id="5" score="0.0000000000000000" recordCount="3.0">
+                                    <SimplePredicate field="item" operator="greaterThan" value="0.5000000000000000"/>
+                                </Node>
+                            </Node>
                         </Node>
-                        <Node id="2" score="0.9049773755656109" recordCount="3815.0">
-                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        <Node id="6" recordCount="291.0">
+                            <SimplePredicate field="price" operator="greaterThan" value="2408.9661865234375000"/>
+                            <Node id="7" score="1.0000000000000000" recordCount="147.0">
+                                <SimplePredicate field="item" operator="lessOrEqual" value="0.5000000000000000"/>
+                            </Node>
+                            <Node id="8" score="0.0000000000000000" recordCount="144.0">
+                                <SimplePredicate field="item" operator="greaterThan" value="0.5000000000000000"/>
+                            </Node>
                         </Node>
                     </Node>
                 </TreeModel>
@@ -100,15 +154,22 @@
                 <True/>
                 <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
                     <MiningSchema>
-                        <MiningField name="ActorId" usageType="active"/>
+                        <MiningField name="price" usageType="active"/>
+                        <MiningField name="item" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7523.0">
+                    <Node id="0" recordCount="459.0">
                         <True/>
-                        <Node id="1" score="0.0908939292861908" recordCount="3728.0">
-                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        <Node id="1" recordCount="298.0">
+                            <SimplePredicate field="item" operator="lessOrEqual" value="0.5000000000000000"/>
+                            <Node id="2" score="0.0000000000000000" recordCount="133.0">
+                                <SimplePredicate field="price" operator="lessOrEqual" value="1985.6398925781250000"/>
+                            </Node>
+                            <Node id="3" score="1.0000000000000000" recordCount="165.0">
+                                <SimplePredicate field="price" operator="greaterThan" value="1985.6398925781250000"/>
+                            </Node>
                         </Node>
-                        <Node id="2" score="0.8992338441039307" recordCount="3795.0">
-                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        <Node id="4" score="0.0000000000000000" recordCount="161.0">
+                            <SimplePredicate field="item" operator="greaterThan" value="0.5000000000000000"/>
                         </Node>
                     </Node>
                 </TreeModel>
@@ -117,15 +178,22 @@
                 <True/>
                 <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
                     <MiningSchema>
-                        <MiningField name="ActorId" usageType="active"/>
+                        <MiningField name="price" usageType="active"/>
+                        <MiningField name="item" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7632.0">
+                    <Node id="0" recordCount="454.0">
                         <True/>
-                        <Node id="1" score="0.1005521164463778" recordCount="3793.0">
-                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        <Node id="1" recordCount="286.0">
+                            <SimplePredicate field="item" operator="lessOrEqual" value="0.5000000000000000"/>
+                            <Node id="2" score="0.0000000000000000" recordCount="143.0">
+                                <SimplePredicate field="price" operator="lessOrEqual" value="1989.7886962890625000"/>
+                            </Node>
+                            <Node id="3" score="1.0000000000000000" recordCount="143.0">
+                                <SimplePredicate field="price" operator="greaterThan" value="1989.7886962890625000"/>
+                            </Node>
                         </Node>
-                        <Node id="2" score="0.9046986551552383" recordCount="3839.0">
-                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        <Node id="4" score="0.0000000000000000" recordCount="168.0">
+                            <SimplePredicate field="item" operator="greaterThan" value="0.5000000000000000"/>
                         </Node>
                     </Node>
                 </TreeModel>
@@ -134,15 +202,22 @@
                 <True/>
                 <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
                     <MiningSchema>
-                        <MiningField name="ActorId" usageType="active"/>
+                        <MiningField name="price" usageType="active"/>
+                        <MiningField name="item" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7538.0">
+                    <Node id="0" recordCount="469.0">
                         <True/>
-                        <Node id="1" score="0.1003535948812932" recordCount="3776.0">
-                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        <Node id="1" recordCount="313.0">
+                            <SimplePredicate field="item" operator="lessOrEqual" value="0.5000000000000000"/>
+                            <Node id="2" score="0.0000000000000000" recordCount="146.0">
+                                <SimplePredicate field="price" operator="lessOrEqual" value="1989.7886962890625000"/>
+                            </Node>
+                            <Node id="3" score="1.0000000000000000" recordCount="167.0">
+                                <SimplePredicate field="price" operator="greaterThan" value="1989.7886962890625000"/>
+                            </Node>
                         </Node>
-                        <Node id="2" score="0.9036462629929055" recordCount="3762.0">
-                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        <Node id="4" score="0.0000000000000000" recordCount="156.0">
+                            <SimplePredicate field="item" operator="greaterThan" value="0.5000000000000000"/>
                         </Node>
                     </Node>
                 </TreeModel>
@@ -151,15 +226,22 @@
                 <True/>
                 <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
                     <MiningSchema>
-                        <MiningField name="ActorId" usageType="active"/>
+                        <MiningField name="price" usageType="active"/>
+                        <MiningField name="item" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7604.0">
+                    <Node id="0" recordCount="461.0">
                         <True/>
-                        <Node id="1" score="0.0968979319546364" recordCount="3809.0">
-                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        <Node id="1" recordCount="317.0">
+                            <SimplePredicate field="item" operator="lessOrEqual" value="0.5000000000000000"/>
+                            <Node id="2" score="0.0000000000000000" recordCount="147.0">
+                                <SimplePredicate field="price" operator="lessOrEqual" value="1989.7886962890625000"/>
+                            </Node>
+                            <Node id="3" score="1.0000000000000000" recordCount="170.0">
+                                <SimplePredicate field="price" operator="greaterThan" value="1989.7886962890625000"/>
+                            </Node>
                         </Node>
-                        <Node id="2" score="0.9063957361758828" recordCount="3795.0">
-                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        <Node id="4" score="0.0000000000000000" recordCount="144.0">
+                            <SimplePredicate field="item" operator="greaterThan" value="0.5000000000000000"/>
                         </Node>
                     </Node>
                 </TreeModel>
@@ -168,15 +250,22 @@
                 <True/>
                 <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
                     <MiningSchema>
-                        <MiningField name="ActorId" usageType="active"/>
+                        <MiningField name="price" usageType="active"/>
+                        <MiningField name="item" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7569.0">
+                    <Node id="0" recordCount="456.0">
                         <True/>
-                        <Node id="1" score="0.0928395061728395" recordCount="3797.0">
-                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        <Node id="1" recordCount="293.0">
+                            <SimplePredicate field="item" operator="lessOrEqual" value="0.5000000000000000"/>
+                            <Node id="2" score="0.0000000000000000" recordCount="148.0">
+                                <SimplePredicate field="price" operator="lessOrEqual" value="2000.0952148437500000"/>
+                            </Node>
+                            <Node id="3" score="1.0000000000000000" recordCount="145.0">
+                                <SimplePredicate field="price" operator="greaterThan" value="2000.0952148437500000"/>
+                            </Node>
                         </Node>
-                        <Node id="2" score="0.9021097046413502" recordCount="3772.0">
-                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        <Node id="4" score="0.0000000000000000" recordCount="163.0">
+                            <SimplePredicate field="item" operator="greaterThan" value="0.5000000000000000"/>
                         </Node>
                     </Node>
                 </TreeModel>
@@ -185,15 +274,22 @@
                 <True/>
                 <TreeModel modelName="DecisionTreeRegressor" functionName="regression" missingValuePenalty="1.0">
                     <MiningSchema>
-                        <MiningField name="ActorId" usageType="active"/>
+                        <MiningField name="price" usageType="active"/>
+                        <MiningField name="item" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7557.0">
+                    <Node id="0" recordCount="455.0">
                         <True/>
-                        <Node id="1" score="0.1093829247675401" recordCount="3763.0">
-                            <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
+                        <Node id="1" score="0.0000000000000000" recordCount="150.0">
+                            <SimplePredicate field="price" operator="lessOrEqual" value="2407.0627441406250000"/>
                         </Node>
-                        <Node id="2" score="0.9043549712407559" recordCount="3794.0">
-                            <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
+                        <Node id="2" recordCount="305.0">
+                            <SimplePredicate field="price" operator="greaterThan" value="2407.0627441406250000"/>
+                            <Node id="3" score="1.0000000000000000" recordCount="152.0">
+                                <SimplePredicate field="item" operator="lessOrEqual" value="0.5000000000000000"/>
+                            </Node>
+                            <Node id="4" score="0.0000000000000000" recordCount="153.0">
+                                <SimplePredicate field="item" operator="greaterThan" value="0.5000000000000000"/>
+                            </Node>
                         </Node>
                     </Node>
                 </TreeModel>
