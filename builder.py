@@ -10,21 +10,16 @@ data = []
 
 for i in range(10000):
     r = random.random()
-    if r < 0.9:
-        data.append({'ActorId': 'john', 'level': 5, 'approved': 0})
-    else:
-        data.append({'ActorId': 'john', 'level': 5, 'approved': 1})
+    data.append({'ActorId': 'john', 'level': 5, 'approved': 0 if r < 0.9 else 1})
 
     v = random.random()
-    if r < 0.9:
-        data.append({'ActorId': 'mary', 'level': 5, 'approved': 1})
-    else:
-        data.append({'ActorId': 'mary', 'level': 5, 'approved': 0})
+    data.append({'ActorId': 'mary', 'level': 5, 'approved': 1 if v < 0.9 else 0})
 
 df = pd.DataFrame(data)
 df.ActorId = pd.Categorical(pd.factorize(df.ActorId)[0])
 df.level = pd.Categorical(pd.factorize(df.level)[0])
 df.approved = pd.Categorical(pd.factorize(df.approved)[0])
+
 
 # Split data
 outputs = df['approved']

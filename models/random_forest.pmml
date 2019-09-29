@@ -2,7 +2,7 @@
 <PMML xmlns="http://www.dmg.org/PMML-4_3" version="4.4">
     <Header copyright="Copyright (c) 2018 Software AG" description="Default Description">
         <Application name="Nyoka" version="3.2.0"/>
-        <Timestamp>2019-07-12 12:57:43.800437</Timestamp>
+        <Timestamp>2019-08-15 13:07:04.309761</Timestamp>
     </Header>
     <MiningBuildTask>
 		<Extension value="Pipeline(memory=None,
@@ -34,12 +34,12 @@
                     <MiningSchema>
                         <MiningField name="ActorId" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7554.0">
+                    <Node id="0" recordCount="7599.0">
                         <True/>
-                        <Node id="1" score="0.1019065294415387" recordCount="3751.0">
+                        <Node id="1" score="0.0942602255512540" recordCount="3762.0">
                             <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
                         </Node>
-                        <Node id="2" score="0.9026840111971020" recordCount="3803.0">
+                        <Node id="2" score="0.9064202013533587" recordCount="3837.0">
                             <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
                         </Node>
                     </Node>
@@ -51,12 +51,12 @@
                     <MiningSchema>
                         <MiningField name="ActorId" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7590.0">
+                    <Node id="0" recordCount="7549.0">
                         <True/>
-                        <Node id="1" score="0.1003674014696059" recordCount="3783.0">
+                        <Node id="1" score="0.0971306068601583" recordCount="3768.0">
                             <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
                         </Node>
-                        <Node id="2" score="0.9018629407850964" recordCount="3807.0">
+                        <Node id="2" score="0.9063342318059299" recordCount="3781.0">
                             <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
                         </Node>
                     </Node>
@@ -68,12 +68,12 @@
                     <MiningSchema>
                         <MiningField name="ActorId" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7536.0">
+                    <Node id="0" recordCount="7551.0">
                         <True/>
-                        <Node id="1" score="0.1004330446369087" recordCount="3769.0">
+                        <Node id="1" score="0.0968490878938640" recordCount="3791.0">
                             <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
                         </Node>
-                        <Node id="2" score="0.9022681787858572" recordCount="3767.0">
+                        <Node id="2" score="0.9040201005025126" recordCount="3760.0">
                             <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
                         </Node>
                     </Node>
@@ -85,12 +85,12 @@
                     <MiningSchema>
                         <MiningField name="ActorId" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7560.0">
+                    <Node id="0" recordCount="7641.0">
                         <True/>
-                        <Node id="1" score="0.0957233544938189" recordCount="3777.0">
+                        <Node id="1" score="0.0909995027349577" recordCount="3826.0">
                             <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
                         </Node>
-                        <Node id="2" score="0.9025606917193216" recordCount="3783.0">
+                        <Node id="2" score="0.9049773755656109" recordCount="3815.0">
                             <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
                         </Node>
                     </Node>
@@ -102,12 +102,12 @@
                     <MiningSchema>
                         <MiningField name="ActorId" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7604.0">
+                    <Node id="0" recordCount="7523.0">
                         <True/>
-                        <Node id="1" score="0.1042955039277954" recordCount="3783.0">
+                        <Node id="1" score="0.0908939292861908" recordCount="3728.0">
                             <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
                         </Node>
-                        <Node id="2" score="0.8992853581519029" recordCount="3821.0">
+                        <Node id="2" score="0.8992338441039307" recordCount="3795.0">
                             <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
                         </Node>
                     </Node>
@@ -119,12 +119,12 @@
                     <MiningSchema>
                         <MiningField name="ActorId" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7609.0">
+                    <Node id="0" recordCount="7632.0">
                         <True/>
-                        <Node id="1" score="0.0958811613774477" recordCount="3807.0">
+                        <Node id="1" score="0.1005521164463778" recordCount="3793.0">
                             <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
                         </Node>
-                        <Node id="2" score="0.9014154048716261" recordCount="3802.0">
+                        <Node id="2" score="0.9046986551552383" recordCount="3839.0">
                             <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
                         </Node>
                     </Node>
@@ -136,12 +136,12 @@
                     <MiningSchema>
                         <MiningField name="ActorId" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7594.0">
+                    <Node id="0" recordCount="7538.0">
                         <True/>
-                        <Node id="1" score="0.0946434439697667" recordCount="3816.0">
+                        <Node id="1" score="0.1003535948812932" recordCount="3776.0">
                             <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
                         </Node>
-                        <Node id="2" score="0.9002367264119040" recordCount="3778.0">
+                        <Node id="2" score="0.9036462629929055" recordCount="3762.0">
                             <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
                         </Node>
                     </Node>
@@ -153,12 +153,12 @@
                     <MiningSchema>
                         <MiningField name="ActorId" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7563.0">
+                    <Node id="0" recordCount="7604.0">
                         <True/>
-                        <Node id="1" score="0.0927379784102061" recordCount="3851.0">
+                        <Node id="1" score="0.0968979319546364" recordCount="3809.0">
                             <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
                         </Node>
-                        <Node id="2" score="0.8924566768603466" recordCount="3712.0">
+                        <Node id="2" score="0.9063957361758828" recordCount="3795.0">
                             <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
                         </Node>
                     </Node>
@@ -170,12 +170,12 @@
                     <MiningSchema>
                         <MiningField name="ActorId" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7623.0">
+                    <Node id="0" recordCount="7569.0">
                         <True/>
-                        <Node id="1" score="0.1069861626729666" recordCount="3765.0">
+                        <Node id="1" score="0.0928395061728395" recordCount="3797.0">
                             <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
                         </Node>
-                        <Node id="2" score="0.9035232136977280" recordCount="3858.0">
+                        <Node id="2" score="0.9021097046413502" recordCount="3772.0">
                             <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
                         </Node>
                     </Node>
@@ -187,12 +187,12 @@
                     <MiningSchema>
                         <MiningField name="ActorId" usageType="active"/>
                     </MiningSchema>
-                    <Node id="0" recordCount="7588.0">
+                    <Node id="0" recordCount="7557.0">
                         <True/>
-                        <Node id="1" score="0.0970890122833586" recordCount="3760.0">
+                        <Node id="1" score="0.1093829247675401" recordCount="3763.0">
                             <SimplePredicate field="ActorId" operator="lessOrEqual" value="0.5000000000000000"/>
                         </Node>
-                        <Node id="2" score="0.9075449892686148" recordCount="3828.0">
+                        <Node id="2" score="0.9043549712407559" recordCount="3794.0">
                             <SimplePredicate field="ActorId" operator="greaterThan" value="0.5000000000000000"/>
                         </Node>
                     </Node>
